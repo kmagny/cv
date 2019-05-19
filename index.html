@@ -1,0 +1,159 @@
+				<table class="table table-responsive" width="0" border="0">
+                      <tbody>
+                        <tr>
+                          <th height="23" align="right" scope="col">&nbsp;</th>
+                          <th scope="col">&nbsp;</th>
+                          <th scope="col">&nbsp;</th>
+                          <th scope="col">&nbsp;</th>
+                        </tr>
+                        <tr>
+                          <td align="right" valign="top">Title:</td>
+                          <td colspan="3" valign="top"><input name="querytitle" type="text" class="form-control" id="querytitle" placeholder="Query Title"></td>
+                        </tr>
+                        <tr>
+                          <td align="right" valign="top">Query Expression:</td>
+                          <td colspan="3" valign="top"><textarea name="qexpression" rows="3" class="form-control" id="qexpression" placeholder="Expression"></textarea></td>
+                        </tr>
+                        <tr>
+                          <td align="right" valign="top">Type:</td>
+                          <td valign="top">
+                            <select name="qType" id="qType">
+                              <option value="2">Tab Query</option>
+                              <option value="1">Dashed Query</option>
+                            </select>
+                          </td>
+                          <td valign="top">Icon</td>
+                          <td valign="top"><input name="qdashicon" type="text" class="form-control" id="qdashicon" placeholder="Query Title"></td>
+                        </tr>
+                        <tr>
+                          <td align="right" valign="top">Activate:</td>
+                          <td valign="top"><input name="qactive" type="checkbox"  id="qactive" value="1"></td>
+                          <td valign="top">Query Color</td>
+                          <td valign="top"><select name="qdashcolor" id="qdashcolor">
+                          </select></td>
+                        </tr>
+                        <tr>
+                          <td align="right" valign="top">Linked:</td>
+                          <td valign="top">
+                            <select name="qLink" id="qLink">
+							</select>
+                          </td>
+                          <td valign="top">Published Type</td>
+                          <td valign="top"><select name="cquerytype" id="cquerytype">
+                          </select></td>
+                        </tr>
+                        <tr>
+                          <td align="right">&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                        
+                        
+                      </tbody>
+                    </table>
+                    
+                    
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+				<p>&nbsp;</p>
+<table class="table table-responsive" width="0" border="0">
+                      <tbody>
+                        <tr>
+                          <th height="23" align="right" scope="col">&nbsp;</th>
+                          <th scope="col">&nbsp;</th>
+                          <th scope="col">&nbsp;</th>
+                          <th scope="col">&nbsp;</th>
+                        </tr>
+                        <tr>
+                          <td align="right" valign="top">Title:</td>
+                          <td colspan="3" valign="top"><input name="querytitle2" type="text" class="form-control" id="querytitle2" placeholder="Query Title" value="#qlistedit.querytitle#"></td>
+                        </tr>
+                        <tr>
+                          <td align="right" valign="top">Query Expression:</td>
+                          <td colspan="3" valign="top"><textarea name="qexpression2" rows="3" class="form-control" id="qexpression2" placeholder="Expression">#qlistedit.qexpression#</textarea></td>
+                        </tr>
+                        <tr>
+                          <td align="right" valign="top">Type:</td>
+                          <td valign="top"><select name="qType2" id="qType2">
+                            <option value="2" <cfif (isDefined("qlistedit.qtype") AND 2 EQ qlistedit.qtype)>selected="selected"</cfif>>Tab Query</option>
+                            <option value="1" <cfif (isDefined("qlistedit.qtype") AND 1 EQ qlistedit.qtype)>selected="selected"</cfif>>Dashed Query</option>
+                          </select></td>
+                          <td valign="top">Icon</td>
+                          <td valign="top"><input name="qdashicon" type="text" class="form-control" id="qdashicon" placeholder="Ionicons Icon" value="#qlistedit.qdashicon#"></td>
+                        </tr>
+                        <tr>
+                          <td align="right" valign="top">Activate:</td>
+                          <td valign="top"><input <cfif (#qlistedit.qactive# EQ 1)>checked="checked"</cfif> name="qactive2" type="checkbox"  id="qactive2" value="1"></td>
+                          <td valign="top">Query Color</td>
+                          <td valign="top">
+                          <select class="form-control" name="qdashcolor" id="qdashcolor">
+                            <option value="bg-aqua" <cfif (isDefined("qlistedit.qdashcolor") AND "bg-aqua" EQ qlistedit.qdashcolor)>selected="selected"</cfif>>bg-aqua</option>
+                            <option value="bg-green" <cfif (isDefined("qlistedit.qdashcolor") AND "bg-green" EQ qlistedit.qdashcolor)>selected="selected"</cfif>>bg-green</option>
+                            <option value="bg-yellow" <cfif (isDefined("qlistedit.qdashcolor") AND "bg-yellow" EQ qlistedit.qdashcolor)>selected="selected"</cfif>>bg-yellow</option>
+                            <option value="bg-red" <cfif (isDefined("qlistedit.qdashcolor") AND "bg-red" EQ qlistedit.qdashcolor)>selected="selected"</cfif>>bg-red</option>
+                            <option value="bg-info" <cfif (isDefined("qlistedit.qdashcolor") AND "bg-info" EQ qlistedit.qdashcolor)>selected="selected"</cfif>>bg-info</option>
+                          </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="right" valign="top">Linked:</td>
+                          <td valign="top"><select name="qLink2" id="qLink2">
+                            <cfloop query="qlistTab">
+                                <option value="#qlistTab.queryname#" <cfif (isDefined("qlistedit.qlink") AND qlistTab.queryname EQ qlistedit.qlink)>selected="selected"</cfif>>#qlistTab.querytitle#</option>
+                              </cfloop>
+                            </select>
+                          </td>
+                          <td valign="top">Published Type</td>
+                          <td valign="top">
+                          	<select class="form-control" name="cquerytype" id="cquerytype" required>
+                          	  <option value="0" <cfif (isDefined("qlistedit.cquerytype") AND 0 EQ qlistedit.cquerytype)>selected="selected"</cfif>>Public</option>
+                          	  <option value="1" <cfif (isDefined("qlistedit.cquerytype") AND 1 EQ qlistedit.cquerytype)>selected="selected"</cfif>>Private</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="right">&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                          <td>&nbsp;</td>
+                        </tr>
+                        
+
+                        
+	                  </tbody>
+					</table>
+<img src="/images/ivan2019.jpg" width="480" height="640" alt=""/>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                <select class="form-control" name="ContactType" id="ContactType">
+                    <cfloop query="ContactTypes">
+                     <option value="ContactTypeID" <cfif (isDefined("session.me") AND "ContactTypeID" EQ session.me)>selected="selected"</cfif>>ContactType</option>
+                  </cfloop>
+</select>
